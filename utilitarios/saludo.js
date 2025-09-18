@@ -12,6 +12,10 @@ saludar = function(){
 
     estatura =recuperarFloat("txtEstatura");
 
+    let mensajeBienvenida = "Bienvenido "+nombre+" "+apellido; 
+    
+    mostrarTexto("lblResultado",mensajeBienvenida);
+
 }
 
 recuperarInt = function (idComponente){
@@ -25,6 +29,12 @@ recuperarFloat = function (idComponente){
     let valorCaja = recuperarTexto(idComponente);
     let valorFlotante= parseFloat(valorCaja);
     return valorFlotante;
+}
+
+mostrarTexto = function(idComponente,mensaje){
+    let  componente;
+    componente = document.getElementById(idComponente);
+    componente.innerText = mensaje;
 }
 
 
