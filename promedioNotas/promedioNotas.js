@@ -16,4 +16,12 @@ calcularPromedioNotas = function(){
     
     
     cambiarTexto("lblPromedio","PROMEDIO: "+promedio2Decimales);
+
+    if(promedio2Decimales>7){
+        cambiarImagen("imgResultado","./imagenes/exito.gif");
+    }else{
+        cambiarImagen("imgResultado","./imagenes/reprobado.gif");
+    }
+
+
 }
