@@ -17,10 +17,19 @@ calcularPromedioNotas = function(){
     
     cambiarTexto("lblPromedio","PROMEDIO: "+promedio2Decimales);
 
-    if(promedio2Decimales>7){
-        cambiarImagen("imgResultado","./imagenes/exito.gif");
-    }else{
-        cambiarImagen("imgResultado","./imagenes/reprobado.gif");
+    if(promedio2Decimales<5 && promedio2Decimales>0){
+        cambiarTexto("lblEstado","REPROBADO");
+        cambiarImagen("imgResultado","./imagenes/reprobado2.gif");
+    }else if(promedio2Decimales>=5 && promedio2Decimales<=8){
+        cambiarTexto("lblEstado","BUEN TRABAJO");
+        cambiarImagen("imgResultado","./imagenes/buenTrabajo.gif");
+    }else if(promedio2Decimales>8 && promedio2Decimales<=10){
+        cambiarTexto("lblEstado","Excelente");
+        cambiarImagen("imgResultado","./imagenes/exelente.gif");
+    } else {
+        
+        cambiarTexto("lblEstado","Datos incorrectos");
+        cambiarImagen("imgResultado","./imagenes/error.gif");
     }
 
 
