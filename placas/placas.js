@@ -39,3 +39,11 @@ validarPlaca = function () {
     }
 }
 
+limpiar = function(){
+
+    mostrarTextoEnCaja("txtPlaca","");
+    mostrarTexto("lblEstado", "");
+    mostrarTexto("lblErrores", "");
+    mostrarTexto("lblProvincia", "");
+    mostrarTexto("lblDiaPico","");
+}
