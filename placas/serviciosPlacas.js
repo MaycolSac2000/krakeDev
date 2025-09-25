@@ -218,7 +218,7 @@ obtenerProvincia = function (placa) {
             provincia = "Bolívar";
             break;
         case "U":
-           provincia = "Cañar";
+            provincia = "Cañar";
             break;
         case "C":
             provincia = "Carchi";
@@ -267,7 +267,7 @@ obtenerProvincia = function (placa) {
             provincia = "Pichincha";
             break;
         case "K":
-            provincia = "Sucumbíos";
+            provincia = "Sucumbios";
             break;
         case "Q":
             provincia = "Orellana";
@@ -287,35 +287,46 @@ obtenerProvincia = function (placa) {
     }
     return provincia;
 
-
-    let A = "Azuay";
-    let B = "Bolívar";
-    let U = "Cañar";
-    let C = "Carchi";
-    let X = "Cotopaxi";
-    let H = "Chimborazo";
-    let O = "El Oro";
-    let E = "Esmeraldas";
-    let W = "Galápagos";
-    let G = "Guayas";
-    let I = "Imbabura";
-    let L = "Loja";
-    let R = "Los Ríos";
-    let M = "Manabí";
-    let V = "Morona Santiago";
-    let N = "Napo";
-    let S = "Pastaza";
-    let P = "Pichincha";
-    let K = "Sucumbíos";
-    let Q = "Orellana";
-    let T = "Tungurahua";
-    let Z = "Zamora Chinchipe";
-    let Y = "Santa Elena";
-
-
-
-
-
 }
 
+obtenerDiaPicoYPlaca = function (placa) {
+
+    let digito = obtenerUltimoDigito(placa);
+    let dia;
+    switch (digito) {
+        case ("1"):
+        case ("2"):
+            dia = "Lunes";
+            break;
+        case ("3"):
+        case ("4"):
+            dia = "Martes";
+            break;
+        case ("5"):
+        case ("6"):
+            dia = "Miercoles";
+            break;
+        case ("7"):
+        case ("8"):
+            dia = "Jueves";
+            break;
+        case ("9"):
+        case ("0"):
+            dia = "Viernes";
+            break;
+        default:
+            dia = "No es un numero"
+
+    }
+    return dia;
+}
+
+obtenerUltimoDigito = function (placa) {
+    let numero;
+    let ultimaPosicion;
+    ultimaPosicion = placa.length - 1;
+    numero = placa.charAt(ultimaPosicion);
+    return numero;
+
+}
 
