@@ -17,15 +17,15 @@
         <div class="opc">
 
             <div class="contenedorImagen">
-                <img src="imagenes/piegra.png" class="logo" onclick="jugar('piedra');">
+                <img src="imagenes/piegra.png" class="logo" onclick="jugar('piedra');" id="imgPiedra">
             </div>
             <div class="contenedorImagen">
-                <img src="imagenes/papel.png" class="logo" onclick="jugar('papel');">
+                <img src="imagenes/papel.png" class="logo" onclick="jugar('papel');" id="imgPapel">
 
 
             </div>
             <div class="contenedorImagen">
-                <img src="imagenes/tijera.png" class="logo" onclick="jugar('tijera');">
+                <img src="imagenes/tijera.png" class="logo" onclick="jugar('tijera');" id="imgTijera">
             </div>
 
 
@@ -33,21 +33,39 @@
         <div class="titulo1">
             vs
         </div>
-        <div class="resultado">
+        <div class="opc">
 
 
             <div class="contenedorImagen">
-                <img src="" class="logo" id="imgComputadora">
+                <img src="" class="logo"  id="imgComputadora">
             </div>
             <div class="contenedorImagen">
                 <div id="lblResultado" class="informacion">
-                        
+
+                </div>
+            </div>
+            <div class="contenedorImagen">
+                <div id="lblPuntajes" class="Puntajes">
+                    <div id="lblPuntosJugador">
+                        Puntos Jugador: 0
+                    </div>
+                    <div id="lblComputadora">
+                        Puntos Computador: 0
+                    </div>
+                    <div id="lblMensajeGanador">
+
+                    </div>
+
+
                 </div>
             </div>
         </div>
 
 
-        
+
+    </div>
+    <div class="acerca">
+        <input type="button" class="estiloBoton"   value="Nueva Partida" onclick="limpiar();">
     </div>
 </body>
 
