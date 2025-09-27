@@ -35,10 +35,5 @@ recuperarFloat = function(idComponente){
     return valorFlotante;
  }
 
- recuperarIdComponente = function (idComponente){
 
-    let id=componente.getElementById(idComponente);
-
-
- }
 
