@@ -1,8 +1,8 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
 
 let palabraSecreta;
-let intentos;
-let coincidencias;
+let intentos=0;
+let coincidencias=0;
 let errores=0;
 esMayuscula = function (caracter) {
 
@@ -84,6 +84,7 @@ validar = function(letra){
     if(letrasEncontradas==0){
        alert("La letra no es parte de la palabra");
        errores=errores+1;
+       mostrarAhorcado();
     }
 
 
@@ -97,8 +98,11 @@ ingresarLetra = function (){
         validar(letra);
         if(coincidencias == 5){
             alert("HA GANADO");
+            mostrarImagen("ahorcadoImagen","./ganador.gif");
+
         }else if(intentos == 10 ){
             alert("HA PERDIDO");
+             mostrarImagen("ahorcadoImagen","./gameOver.gif");
         }
 
     }else{
