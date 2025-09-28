@@ -2,81 +2,83 @@
 
 let palabraSecreta;
 
-esMayuscula= function (caracter){
-    
-   let codigoLetra = caracter.charCodeAt(0);
+esMayuscula = function (caracter) {
 
-   if(codigoLetra>= 65 && codigoLetra<=90){
+    let codigoLetra = caracter.charCodeAt(0);
 
-    return true;
+    if (codigoLetra >= 65 && codigoLetra <= 90) {
 
-   }else {
-    return false;
-   }
+        return true;
+
+    } else {
+        return false;
+    }
 
 }
 
-guardarPalabra = function (){
+guardarPalabra = function () {
     let palabra = recuperarTexto("txtSecreta");
-    let hayMayusculas=0;
+    let hayMayusculas = 0;
     let longitud = palabra.length;
-    if(longitud == 5){
-        for(let i=0;i<longitud;i++){
+    if (longitud == 5) {
+        for (let i = 0; i < longitud; i++) {
             let letra = palabra.charAt(i);
-            if(esMayuscula(letra)){
-                hayMayusculas = hayMayusculas+1;
+            if (esMayuscula(letra)) {
+                hayMayusculas = hayMayusculas + 1;
             }
         }
 
-        if(hayMayusculas == 5){
+        if (hayMayusculas == 5) {
             palabraSecreta = palabra;
             console.log(palabraSecreta);
-        }else{
+        } else {
             alert("La palabra debe estar en letras mayusculas");
         }
 
-    }else{
+    } else {
         alert("La palabra debe ser de 5 letras");
     }
 }
 
-mostrarLetra = function (letra,posicion){
+mostrarLetra = function (letra, posicion) {
 
 
-  let longitud = palabraSecreta.length;
-  for(i=0;i < longitud;i++){
-    let letraIterada = charAt(i);  
-    if(letraIterada==letra){
-        
-        posicion = i;
-        switch(posicion){
 
-             case 0:
-            mostrarTexto("div0",letra);
+    switch (posicion) {
+
+        case 0:
+            mostrarTexto("div0", letra);
             break;
-             case 1:
-            mostrarTexto("div1",letra);
+        case 1:
+            mostrarTexto("div1", letra);
             break;
-             case 2:
-            mostrarTexto("div2",letra);
+        case 2:
+            mostrarTexto("div2", letra);
             break;
-             case 3:
-            mostrarTexto("div3",letra);
+        case 3:
+            mostrarTexto("div3", letra);
             break;
-             case 4:
-            mostrarTexto("div4",letra);
+        case 4:
+            mostrarTexto("div4", letra);
             break;
-             default:
-            
-        }
-       
+        default:
 
     }
-  }
 }
 
-personalbar=function (){
+validar = function(letra){
 
-    
+    let letrasEncontradas;
+
+    for(let i=0;i<palabraSecreta.length;i++){
+        let letraIterada = palabraSecreta.charAt(i);
+        if(letra==letraIterada){
+            mostrarLetra(letra,i);
+            letrasEncontradas =letrasEncontradas+1;
+        }
+
+    }
 
 }
+
+
