@@ -97,7 +97,7 @@ ingresarLetra = function (){
         validar(letra);
         if(coincidencias == 5){
             alert("HA GANADO");
-        }else if(intentos = 10 ){
+        }else if(intentos == 10 ){
             alert("HA PERDIDO");
         }
 
@@ -108,7 +108,37 @@ ingresarLetra = function (){
 }
 
 mostrarAhorcado = function(){
-    
+    switch(errores){
+        case 1:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_01.png");
+        break;
+         case 2:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_02.png");
+        break;
+         case 3:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_03.png");
+        break;
+         case 4:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_04.png");
+        break;
+         case 5:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_05.png");
+        break;
+         case 6:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_06.png");
+        break;
+         case 7:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_07.png");
+        break;
+         case 8:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_08.png");
+        break;
+         case 9:
+        mostrarImagen("ahorcadoImagen","./Ahorcado_09.png");
+        break;
+        
+        default:
+    }
 }
 
 
