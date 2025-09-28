@@ -38,7 +38,45 @@ guardarPalabra = function (){
     }else{
         alert("La palabra debe ser de 5 letras");
     }
+}
+
+mostrarLetra = function (letra,posicion){
+
+
+  let longitud = palabraSecreta.length;
+  for(i=0;i < longitud;i++){
+    let letraIterada = charAt(i);  
+    if(letraIterada==letra){
+        
+        posicion = i;
+        switch(posicion){
+
+             case 0:
+            mostrarTexto("div0",letra);
+            break;
+             case 1:
+            mostrarTexto("div1",letra);
+            break;
+             case 2:
+            mostrarTexto("div2",letra);
+            break;
+             case 3:
+            mostrarTexto("div3",letra);
+            break;
+             case 4:
+            mostrarTexto("div4",letra);
+            break;
+             default:
+            
+        }
+       
+
+    }
+  }
+}
+
+personalbar=function (){
 
     
 
-};
+}
