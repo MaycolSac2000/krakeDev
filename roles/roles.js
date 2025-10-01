@@ -1,6 +1,7 @@
 let empleados = [
     { cedula: "1714616123", nombre: "John", apellido: "Cena", sueldo: 500.0 },
-    { cedula: "0914632123", nombre: "Luisa", apellido: "Gonzalez", sueldo: 900.0 }
+    { cedula: "0914632123", nombre: "Luisa", apellido: "Gonzalez", sueldo: 900.0 },
+    { cedula: "1751219948", nombre: "Mikael", apellido: "Altamirano", sueldo: 1000.0 }
 ]
 
 mostrarOpcionEmpleado = function () {
@@ -8,6 +9,7 @@ mostrarOpcionEmpleado = function () {
     mostrarComponente("divEmpleado");
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
+    mostrarEmpleados();
 }
 
 
@@ -24,4 +26,26 @@ mostrarOpcionResumen = function () {
     ocultarComponente("divRol");
     ocultarComponente("divEmpleado");
 }
+
+mostrarEmpleados = function () {
+    let cmpTablaEmpleados = document.getElementById("tablaEmpleados");
+    let generandoTabla = "<table><tr><th>Cedula</th><tr><th>Nombre</th><tr><th>Apellido</th><tr><th>Sueldo</th></tr>";
+    let empledoRecuperado;
+    for(let i=0;i<empleados.length; i++){
+        empledoRecuperado = empleados[i];
+
+        generandoTabla += "<tr><td>"+empledoRecuperado.cedula+"</td>"
+        +"<td>"+empledoRecuperado.nombre+"</td>"
+        +"<td>"+empledoRecuperado.apellido+"</td>"
+        +"<td>"+empledoRecuperado.sueldo+"</td>"
+        +"</tr>";
+    }
+    
+    generandoTabla += "</table>"
+    cmpTablaEmpleados.innerHTML = generandoTabla;
+
+
+
+}
+
 
