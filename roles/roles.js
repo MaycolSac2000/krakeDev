@@ -29,7 +29,7 @@ mostrarOpcionResumen = function () {
 
 mostrarEmpleados = function () {
     let cmpTablaEmpleados = document.getElementById("tablaEmpleados");
-    let generandoTabla = "<table><tr><th>Cedula</th><tr><th>Nombre</th><tr><th>Apellido</th><tr><th>Sueldo</th></tr>";
+    let generandoTabla = "<table class='miDisenoTabla'><tr><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Sueldo</th></tr>";
     let empledoRecuperado;
     for(let i=0;i<empleados.length; i++){
         empledoRecuperado = empleados[i];
