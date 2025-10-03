@@ -11,11 +11,7 @@ mostrarOpcionEmpleado = function () {
     mostrarComponente("divEmpleado");
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-    deshabilitarComponente("btnGuardar");
+    deshabilitarComponentesEmpleado();
     mostrarEmpleados();
 }
 
@@ -132,11 +128,7 @@ guardar = function () {
                 empleados.push(empleado);
                 alert("EMPLEADO GUARDADO CORRECTAMENTE");
                 limpiar();
-                deshabilitarComponente("txtCedula");
-                deshabilitarComponente("txtNombre");
-                deshabilitarComponente("txtApellido");
-                deshabilitarComponente("txtSueldo");
-                deshabilitarComponente("btnGuardar");
+                deshabilitarComponentesEmpleado();
 
 
 
@@ -272,15 +264,23 @@ validacionSueldo = function (sueldo) {
 
 }
 
-limpiar = function() {
+limpiar = function () {
 
     mostrarTextoEnCaja("txtCedula", "");
     mostrarTextoEnCaja("txtNombre", "");
     mostrarTextoEnCaja("txtApellido", "");
     mostrarTextoEnCaja("txtSueldo", "");
-    mostrarTexto("lblErrorCedula","");
-    mostrarTexto("lblErrorNombre","");
-    mostrarTexto("lblErrorApellido","");
-    mostrarTexto("lblErrorSueldo","");
+    mostrarTexto("lblErrorCedula", "");
+    mostrarTexto("lblErrorNombre", "");
+    mostrarTexto("lblErrorApellido", "");
+    mostrarTexto("lblErrorSueldo", "");
 }
 
+
+deshabilitarComponentesEmpleado = function () {
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
+}
