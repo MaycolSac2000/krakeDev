@@ -5,7 +5,25 @@ let empleados = [
 ]
 
 let esNuevo = false
+//Rol
 
+buscarPorRol = function () {
+    let cedula = recuperarTexto("txtBusquedaCedulaRol");
+    let empleadoBuscado = buscarEmpleado(cedula);
+
+    if(empleadoBuscado != null){
+        mostrarTexto("infoCedula",empleadoBuscado.cedula);
+        mostrarTexto("infoNombre",empleadoBuscado.nombre+" "+empleadoBuscado.apellido);
+        mostrarTexto("infoSueldo",empleadoBuscado.sueldo);
+    }else{
+        alert("EL EMPLEADO NO EXISTE");
+    }
+
+}
+
+
+
+// Empleados
 mostrarOpcionEmpleado = function () {
 
     mostrarComponente("divEmpleado");
@@ -147,7 +165,7 @@ guardar = function () {
             deshabilitarComponentesEmpleado();
             limpiar();
             mostrarEmpleados();
-            
+
 
 
 
