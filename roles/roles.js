@@ -307,6 +307,12 @@ limpiar = function () {
     mostrarTexto("lblErrorNombre", "");
     mostrarTexto("lblErrorApellido", "");
     mostrarTexto("lblErrorSueldo", "");
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
+    esNuevo = false;
 }
 
 
