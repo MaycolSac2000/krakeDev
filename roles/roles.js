@@ -21,6 +21,34 @@ buscarPorRol = function () {
 
 }
 
+calcularAporteEmpleado = function (sueldo) {
+    let aporte = sueldo * 0.0945;
+    return aporte; 
+}
+
+calcularValorAPagar = function (sueldo,aporteIEES, descuento){
+
+    let valorPagar = sueldo-aporteIEES-descuento;
+    return valorPagar;
+}
+
+calcularRol = function () {
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let descuentos = recuperarFloat("txtDescuentos");
+
+    if(isNaN(descuentos)){
+        alert("No es un valor decimal");
+    }else{
+        if(descuentos>=0 && descuentos<=sueldo){
+            let aporte = calcularAporteEmpleado(sueldo);
+            mostrarTexto("infoIESS",aporte);
+            let totalPagar = calcularValorAPagar(sueldo,aporte,descuentos);
+            mostrarTexto("infoPago",totalPagar);
+
+        }
+    }
+    
+}
 
 
 // Empleados
