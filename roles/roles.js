@@ -8,6 +8,49 @@ let esNuevo = false
 
 let roles = [];
 //Rol
+mostrarTotales = function () {
+
+    let totalEmpleado = 0;
+    let totalEmpleador = 0;
+    let totalPagar = 0;
+    let rolIterado;
+
+    for (let i = 0; i < roles.length; i++) {
+        rolIterado = roles[i];
+        totalEmpleado = totalEmpleado + rolIterado.aporteEmpleado;
+        totalEmpleador = totalEmpleador + rolIterado.aporteEmpleador;
+        totalPagar = totalPagar + rolIterado.valorPagar;
+    }
+    
+    let totalNomina = totalEmpleado+totalEmpleador+totalPagar;
+    mostrarTexto("infoTotalPago",totalPagar);
+    mostrarTexto("infoAporteEmpresa",totalEmpleador);
+    mostrarTexto("infoAporteEmpleado",totalEmpleado);
+    mostrarTexto("totalNomina","Total Nomina: "+totalNomina);
+
+
+}
+
+mostrarRoles = function () {
+    let componenteDiv = document.getElementById("tablaResumen");
+    let generarTablaResumen = "<table class='miDisenoTabla'><tr><th>CEDULA</th><th>NOMBRE</th><th>VALOR A PAGAR</th><th>APORTE EMPLEADO</th><th>APORTE EMPLEADOR</th></tr>";
+    let rol;
+    for (let i = 0; i < roles.length; i++) {
+        rol = roles[i];
+        generarTablaResumen += "<tr><td>" + rol.cedula + "</td>"
+            + "<td>" + rol.nombre + "</td>"
+            + "<td>" + rol.valorPagar + "</td>"
+            + "<td>" + rol.aporteEmpleado + "</td>"
+            + "<td>" + rol.aporteEmpleador + "</td>"
+            + "</tr>";
+    }
+    generarTablaResumen += "</table>";
+
+    componenteDiv.innerHTML = generarTablaResumen;
+    mostrarTotales();
+
+
+}
 
 buscarRol = function (cedula) {
 
@@ -33,6 +76,7 @@ agregarRol = function (rol) {
     let objetoRoles = buscarRol(rol.cedula);
     if (objetoRoles == null) {
         roles.push(rol);
+        mostrarRoles();
         alert("SE AGREGO EL ROL CORRECTAMENTE");
         deshabilitarComponente("btnGuardarRol");
 
@@ -138,6 +182,7 @@ mostrarOpcionRol = function () {
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
     deshabilitarComponente("btnGuardarRol");
+    mostrarRoles();
 }
 
 mostrarOpcionResumen = function () {
